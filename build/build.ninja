@@ -47,7 +47,7 @@ build cmake_object_order_depends_target_Retro3DRaycastingGame: phony || .
 build CMakeFiles/Retro3DRaycastingGame.dir/src/main.cpp.obj: CXX_COMPILER__Retro3DRaycastingGame_unscanned_ C$:/Users/harri/OneDrive/Desktop/Retro-3D-Raycasting-Game/src/main.cpp || cmake_object_order_depends_target_Retro3DRaycastingGame
   DEP_FILE = CMakeFiles\Retro3DRaycastingGame.dir\src\main.cpp.obj.d
   FLAGS = -std=gnu++20
-  INCLUDES = -IC:/Users/harri/OneDrive/Desktop/Retro-3D-Raycasting-Game/include
+  INCLUDES = -IC:/Users/harri/OneDrive/Desktop/Retro-3D-Raycasting-Game/src
   OBJECT_DIR = CMakeFiles\Retro3DRaycastingGame.dir
   OBJECT_FILE_DIR = CMakeFiles\Retro3DRaycastingGame.dir\src
 
@@ -60,6 +60,7 @@ build CMakeFiles/Retro3DRaycastingGame.dir/src/main.cpp.obj: CXX_COMPILER__Retro
 # Link the executable C:\Users\harri\OneDrive\Desktop\Retro-3D-Raycasting-Game\bin\Retro3DRaycastingGame.exe
 
 build C$:/Users/harri/OneDrive/Desktop/Retro-3D-Raycasting-Game/bin/Retro3DRaycastingGame.exe: CXX_EXECUTABLE_LINKER__Retro3DRaycastingGame_ CMakeFiles/Retro3DRaycastingGame.dir/src/main.cpp.obj
+  LINK_FLAGS = -mwindows
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\Retro3DRaycastingGame.dir
   POST_BUILD = cd .

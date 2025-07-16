@@ -6,10 +6,9 @@ set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 set(SRC ${CMAKE_CURRENT_SOURCE_DIR}/src)
-set(INCLUDE ${CMAKE_CURRENT_SOURCE_DIR}/include)
 set(BIN ${CMAKE_CURRENT_SOURCE_DIR}/bin)
 
-include_directories(${INCLUDE})
+include_directories(${SRC})
 
 set(SOURCES
     ${SRC}/main.cpp
@@ -18,3 +17,4 @@ set(SOURCES
 add_executable(Retro3DRaycastingGame ${SOURCES})
 set_target_properties(Retro3DRaycastingGame PROPERTIES OUTPUT_NAME "Retro3DRaycastingGame")
 set_target_properties(Retro3DRaycastingGame PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${BIN})
+set_target_properties(Retro3DRaycastingGame PROPERTIES WIN32_EXECUTABLE TRUE)

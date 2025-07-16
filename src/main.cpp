@@ -1,9 +1,10 @@
 #include <iostream>
+#include <stdexcept>
+#include <windows.h>
 
-int main()
+int WINAPI WinMain(HINSTANCE hInst, HINSTANCE hPrevInst, LPSTR lpCmdLine, int nCmdShow)
 {
-    std::cout << "Hello world!" << std::endl;
-    system("pause");
+    MessageBox(nullptr, "Hello world!", "Retro-3D-Raycasting-Game", MB_OK);
 
     return 0;
 }
