@@ -18,3 +18,10 @@ add_executable(Retro3DRaycastingGame ${SOURCES})
 set_target_properties(Retro3DRaycastingGame PROPERTIES OUTPUT_NAME "Retro3DRaycastingGame")
 set_target_properties(Retro3DRaycastingGame PROPERTIES RUNTIME_OUTPUT_DIRECTORY ${BIN})
 set_target_properties(Retro3DRaycastingGame PROPERTIES WIN32_EXECUTABLE TRUE)
+target_link_libraries(Retro3DRaycastingGame PRIVATE gdi32)
+
+# Pre-processor Definitions
+option(ALLOC_CONSOLE "Open with console?" OFF)
+if (ALLOC_CONSOLE)
+    target_compile_definitions(Retro3DRaycastingGame PRIVATE ALLOC_CONSOLE)
+endif()

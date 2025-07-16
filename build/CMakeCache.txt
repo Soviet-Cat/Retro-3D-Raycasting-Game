@@ -14,6 +14,9 @@
 # EXTERNAL cache entries
 ########################
 
+//Open with console?
+ALLOC_CONSOLE:BOOL=OFF
+
 //Path to a program.
 CMAKE_ADDR2LINE:FILEPATH=C:/Users/harri/OneDrive/Desktop/Kronos-Engine/tools/msys64/mingw64/bin/addr2line.exe
 
@@ -22,7 +25,7 @@ CMAKE_AR:FILEPATH=C:/Users/harri/OneDrive/Desktop/Kronos-Engine/tools/msys64/min
 
 //Choose the type of build, options are: None Debug Release RelWithDebInfo
 // MinSizeRel ...
-CMAKE_BUILD_TYPE:STRING=
+CMAKE_BUILD_TYPE:STRING=Release
 
 //CXX compiler
 CMAKE_CXX_COMPILER:FILEPATH=C:/Users/harri/OneDrive/Desktop/Kronos-Engine/tools/msys64/mingw64/bin/c++.exe

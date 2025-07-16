@@ -47,7 +47,20 @@
         "xmemory": "cpp",
         "xstring": "cpp",
         "xtr1common": "cpp",
-        "xutility": "cpp"
+        "xutility": "cpp",
+        "algorithm": "cpp",
+        "optional": "cpp"
     },
-    "C_Cpp.default.defines": ["-DUNICODE"]
+    "C_Cpp.default.defines": [
+        "-DUNICODE"
+    ],
+    "cSpell.words": [
+        "GWLP",
+        "HBITMAP",
+        "lpfn",
+        "lpsz",
+        "LPWSTR",
+        "OVERLAPPEDWINDOW",
+        "PAINTSTRUCT"
+    ]
 }
