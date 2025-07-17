@@ -38,8 +38,8 @@ struct Window
     HWND hWnd;
     LPCSTR lpClassName = "Retro-3D-Raycasting-Game-Window";
     LPCSTR lpTitle = "Retro-3D-Raycasting-Game-Window";
-    UINT uWidth = 640;
-    UINT uHeight = 360;
+    UINT uWidth = 1280;
+    UINT uHeight = 720;
     WNDCLASSEX wndClass;
     MSG msg;
     BOOLEAN bClose = false;
@@ -197,7 +197,7 @@ struct Renderer
     UINT uHeight = 360;
     Buffer* pBufFront;
     Buffer* pBufBack;
-    float fFps = 60.0f;
+    FLOAT fFps = 60.0f;
     UINT uTimerID = 1;
 };
 
@@ -291,13 +291,21 @@ LRESULT CALLBACK Window_process(HWND hWnd, UINT uMsg, WPARAM wParam, LPARAM lPar
                 HDC hDC = BeginPaint(hWnd, &ps);
                 HDC hDCCompatible = CreateCompatibleDC(hDC);
                 auto bm = SelectObject(hDCCompatible, pData->pRenderer->pBufFront->hBm);
-                BitBlt(hDC, 0, 0, pData->pRenderer->pBufFront->uWidth, pData->pRenderer->pBufFront->uHeight, hDCCompatible, 0, 0, SRCCOPY);
+                RECT rClient;
+                GetClientRect(hWnd, &rClient);
+                INT iWidth = rClient.right - rClient.left;
+                INT iHeight = rClient.bottom - rClient.top;
+
+                SetStretchBltMode(hDC, HALFTONE);
+                StretchBlt(hDC, 0, 0, iWidth, iHeight, hDCCompatible, 0, 0, pData->pRenderer->pBufFront->uWidth, pData->pRenderer->pBufFront->uHeight, SRCCOPY);
+
                 SelectObject(hDC, bm);
                 DeleteDC(hDCCompatible);
                 EndPaint(hWnd, &ps);
             }
             break;
         }
+        // TODO: Resizing with bitmap buffers (Keep the same resolution ratio and size of the bitmap but scale at render time to fit the window)
         default:
         {
             break;
